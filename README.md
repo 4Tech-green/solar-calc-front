@@ -1,16 +1,50 @@
-# React + Vite
+# SolarCalc — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface web do SolarCalc. Permite o upload de uma conta de luz e exibe a análise de viabilidade de energia solar com opções de sistema, custo e retorno financeiro.
 
-Currently, two official plugins are available:
+**Deploy:** https://solar-calc-front.vercel.app  
+**Backend:** https://github.com/4Tech-green/solar-calc-back
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Pré-requisitos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 18+
+- npm
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Clonando e rodando
+
+```bash
+git clone https://github.com/4Tech-green/solar-calc-front.git
+cd solar-calc-front
+npm install
+npm run dev
+```
+
+Interface disponível em: `http://localhost:5173`
+
+O frontend já vem configurado para apontar para `http://localhost:8080` em desenvolvimento. Certifique-se de que o backend está rodando antes de testar o upload.
+
+---
+
+## Variável de ambiente (deploy)
+
+Para apontar para um backend diferente do localhost, crie um arquivo `.env.local`:
+
+```
+VITE_API_URL=https://solar-calc-back.onrender.com
+```
+
+---
+
+## Estrutura do projeto
+
+```
+src/
+├── App.jsx                  # Roteamento entre páginas
+└── pages/
+    ├── LandingPage.jsx      # Tela de upload da conta de luz
+    └── ResultadoPage.jsx    # Tela de resultado com opções de sistema solar
+```
